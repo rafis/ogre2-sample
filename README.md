@@ -9,6 +9,8 @@ in experimental projects to learn Ogre3D, featuring:
 * Basic camera controller
 * Basic game state controller
 
+![Screenshot](/share/ogrehead.png?raw=true "Screenshot")
+
 Installation on Windows
 -----------------------
 

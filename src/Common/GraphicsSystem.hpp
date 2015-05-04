@@ -102,6 +102,7 @@ namespace Demo
         SdlInputHandler* getInputHandler(void)                  { return mInputHandler; }
 
         bool getQuit(void) const                                { return mQuit; }
+        void quit(void)                                         { mQuit = true; }
 
         float getAccumTimeSinceLastLogicFrame(void) const       { return mAccumTimeSinceLastLogicFrame; }
 

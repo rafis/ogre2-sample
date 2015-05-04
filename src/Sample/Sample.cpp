@@ -11,7 +11,8 @@
 //---------------------------------------------------------------------------------------
 
 #include "GraphicsSystem.hpp"
-#include "GameState.hpp"
+#include "SampleGameState.hpp"
+#include "SdlInputHandler.hpp"
 
 #include "OgreRenderWindow.h"
 #include "OgreTimer.h"
@@ -23,27 +24,17 @@
 
 using namespace Demo;
 
-namespace Demo
-{
-    class MyGraphicsSystem : public GraphicsSystem
-    {
-        // No resources. They're not needed and a potential point of failure.
-        // This is a very simple project
-        virtual void setupResources(void) {}
-    public:
-        MyGraphicsSystem( GameState *gameState ) :
-            GraphicsSystem( gameState ) {}
-    };
-}
-
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 INT WINAPI WinMainApp( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
 #else
 int mainApp()
 #endif
 {
-    GameState gameState;
-    MyGraphicsSystem graphicsSystem( &gameState );
+    SampleGameState sampleGameState(
+        "This is template project\n" );
+    GraphicsSystem graphicsSystem( &sampleGameState );
+
+    sampleGameState._notifyGraphicsSystem( &graphicsSystem );
 
     graphicsSystem.initialize( "Sample" );
 
@@ -57,6 +48,11 @@ int mainApp()
 
     graphicsSystem.createScene01();
     graphicsSystem.createScene02();
+
+    //Do this after creating the scene for easier the debugging (the mouse doesn't hide itself)
+    SdlInputHandler *inputHandler = graphicsSystem.getInputHandler();
+    inputHandler->setGrabMousePointer( true );
+    inputHandler->setMouseVisible( false );
 
     Ogre::Timer timer;
     unsigned long startTime = timer.getMicroseconds();

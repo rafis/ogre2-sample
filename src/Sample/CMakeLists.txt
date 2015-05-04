@@ -124,7 +124,7 @@ if(UNIX)
  
 endif(UNIX)
 
-set(OGRE_WORK_DIR "${CMAKE_INSTALL_PREFIX}/bin")
+set(OGRE_WORK_DIR "${CMAKE_INSTALL_PREFIX}")
 set(OGRE_BINARY_DIR "${CMAKE_INSTALL_PREFIX}/bin")
 ogre_create_vcproj_userfile(${PROJECT_NAME})
 
