@@ -60,14 +60,8 @@ endif(WIN32 AND NOT MINGW)
 if(WIN32)
  
 	install(TARGETS ${PROJECT_NAME}
-		RUNTIME DESTINATION bin/Release
-		CONFIGURATIONS Release RelWithDebInfo
-    )
-
-	install(TARGETS ${PROJECT_NAME}
-		RUNTIME DESTINATION bin/Debug
-		CONFIGURATIONS Debug
-    )
+		RUNTIME DESTINATION bin
+		CONFIGURATIONS All)
  
 	install(DIRECTORY ${CMAKE_SOURCE_DIR}/dist/Media
 		DESTINATION ./
@@ -76,13 +70,13 @@ if(WIN32)
  
 	install(FILES ${CMAKE_SOURCE_DIR}/dist/bin/plugins.cfg
 		${CMAKE_SOURCE_DIR}/dist/bin/resources2.cfg
-		DESTINATION bin/Release
+		DESTINATION bin
 		CONFIGURATIONS Release RelWithDebInfo
 	)
  
 	install(FILES ${CMAKE_SOURCE_DIR}/dist/bin/plugins${CMAKE_DEBUG_POSTFIX}.cfg
 		${CMAKE_SOURCE_DIR}/dist/bin/resources2${CMAKE_DEBUG_POSTFIX}.cfg
-		DESTINATION bin/Debug
+		DESTINATION bin
 		CONFIGURATIONS Debug
 	)
  
@@ -95,7 +89,7 @@ if(WIN32)
 		${OGRE_PLUGIN_DIR_REL}/OIS.dll
 		${OGRE_PLUGIN_DIR_REL}/cg.dll
 		${OGRE_PLUGIN_DIR_REL}/D3DCompiler_47.dll
-		DESTINATION bin/Release
+		DESTINATION bin
 		CONFIGURATIONS Release RelWithDebInfo
 	)
  
@@ -108,7 +102,7 @@ if(WIN32)
 		${OGRE_PLUGIN_DIR_DBG}/OIS${CMAKE_DEBUG_POSTFIX}.dll
 		${OGRE_PLUGIN_DIR_DBG}/cg.dll
 		${OGRE_PLUGIN_DIR_DBG}/D3DCompiler_47.dll
-		DESTINATION bin/Debug
+		DESTINATION bin
 		CONFIGURATIONS Debug
 	)
 endif(WIN32)
