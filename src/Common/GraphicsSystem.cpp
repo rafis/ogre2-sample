@@ -413,7 +413,13 @@ std::string macBundlePath()
     void GraphicsSystem::registerHlms(void)
     {
         Ogre::ConfigFile cf;
-        cf.load(mResourcePath + "resources2.cfg");
+        Ogre::String resourcesPath;
+#if OGRE_DEBUG_MODE
+        resourcesPath = mResourcePath + "resources2_d.cfg";
+#else
+        resourcesPath = mResourcePath + "resources2.cfg";
+#endif
+        cf.load(resourcesPath);
 
         Ogre::String dataFolder = cf.getSetting( "DoNotUseAsResource", "Hlms", "" );
 
