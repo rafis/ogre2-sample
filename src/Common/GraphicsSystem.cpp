@@ -111,7 +111,7 @@ std::string macBundlePath()
             }
         }
 
-        mRoot->getRenderSystem()->setConfigOption( "sRGB Gamma Conversion", "Yes" );
+        //mRoot->getRenderSystem()->setConfigOption( "sRGB Gamma Conversion", "Yes" );
         mRoot->initialise(false);
 
         Ogre::ConfigOptionMap& cfgOpts = mRoot->getRenderSystem()->getConfigOptions();
