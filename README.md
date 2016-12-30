@@ -1,8 +1,8 @@
 ogre2-sample
 ============
 
-Ogre3D project template is ~~ready to be used~~ (make fork and pull requests to make it usable)
-in experimental projects to learn Ogre3D, featuring:
+Ogre3D project template is ~~ready to be used~~ (please make fork and pull requests to make it usable)
+in your experimental projects or to learn Ogre3D. orge2-sample is featuring:
 
 * Oriented to Ogre3D 2.1
 * OIS Mouse and Keyboard
@@ -14,12 +14,13 @@ in experimental projects to learn Ogre3D, featuring:
 Installation on Windows
 -----------------------
 
-Change project name in CMakeLists.txt and use `cmake-gui`.
+Copy project, rename folder, rename project name in CMakeLists.txt, then use `cmake-gui`.
 
-Installation on Linux/OS X
+Installation on Linux/macOS
 --------------------------
 
-For example you want to create `ogre2-myapp1`, rough steps are following:
+Use command line terminal to prepare template for your experimental project. Replace `ogre2-myapp1`
+with your experimental project name:
 
     git clone https://github.com/rafis/ogre2-sample.git
     cp -ar ogre2-sample ogre2-myapp1
@@ -36,4 +37,4 @@ For example you want to create `ogre2-myapp1`, rough steps are following:
 Other templates
 ---------------
 
-None as I know for Ogre3d 2.x.
+I haven't found any for Ogre3D 2.x, that's why I have created this template.
