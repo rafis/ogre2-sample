@@ -19,7 +19,7 @@
 
 #include "Compositor/OgreCompositorManager2.h"
 
-#include "OVerlay/OgreOverlaySystem.h"
+#include "Overlay/OgreOverlaySystem.h"
 
 #include "OgreWindowEventUtilities.h"
 
